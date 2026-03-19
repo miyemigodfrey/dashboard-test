@@ -41,26 +41,28 @@ export default function Modal({ open, onClose, children }: ModalProps) {
   return createPortal(
     <dialog
       ref={dialogRef}
-      className='modal fixed inset-0 z-50 flex items-center justify-center bg-black/50 w-full h-full'
+      className='modal fixed inset-0 z-[200] flex items-center justify-center backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-transparent w-full h-full p-0 m-0 max-w-full max-h-full'
       onClick={(e) => e.target === dialogRef.current && onClose()}
     >
-      <div className='p-[0.125rem] mt-10 md:mt-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl '>
-        <div className='bg-[#efefef] rounded-lg shadow-lg max-w-sm md:max-w-md lg:max-w-2xl w-full max-h-fit '>
-          <header className='p-2 flex justify-between items-center'>
+      <div className='p-[0.125rem] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl w-[92vw] sm:w-[85vw] md:w-[70vw] lg:w-[42rem] mx-auto'>
+        <div className='bg-[#efefef] rounded-xl shadow-2xl w-full max-h-[85vh] overflow-y-auto'>
+          <header className='sticky top-0 bg-[#efefef] z-10 px-4 py-3 flex justify-between items-center border-b border-gray-200 rounded-t-xl'>
+            <span className='text-sm font-semibold text-gray-600'>Details</span>
             <button
               onClick={onClose}
               aria-label='Close Modal'
-              className='text-gray-500 hover:text-gray-700 text-xl'
+              className='w-7 h-7 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-200 text-lg transition-colors'
             >
               &times;
             </button>
           </header>
 
-          <main className='p-2'>{children}</main>
-          <footer className='p-2 flex justify-end'>
+          <main className='p-3 sm:p-4'>{children}</main>
+
+          <footer className='sticky bottom-0 bg-[#efefef] px-4 py-3 flex justify-end border-t border-gray-200 rounded-b-xl'>
             <button
               onClick={onClose}
-              className='px-3 py-1 bg-slate-50 text-slate-800 border-2 hover:text-white rounded hover:bg-blue-600'
+              className='px-4 py-1.5 text-sm bg-white text-slate-700 border border-gray-300 rounded-lg hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-colors shadow-sm'
             >
               Close
             </button>

@@ -14,7 +14,7 @@ export default function Table() {
   const [isGrid, setIsGrid] = useState(false);
   return (
     <div className='bg-slate-50 p-5 '>
-      <div className='flex flex-row-reverse items-center justify-between gap-5 px-4 py-2 mb-4'>
+      <div className='flex flex-col-reverse sm:flex-row-reverse items-stretch sm:items-center justify-between gap-3 sm:gap-5 px-2 sm:px-4 py-2 mb-4'>
         <AppInput
           type='search'
           value={search}

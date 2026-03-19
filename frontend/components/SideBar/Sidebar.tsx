@@ -1,6 +1,6 @@
 'use client';
 
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 import Modal from '../Modal';
 import AgentSkills from '../AgentSkills';
@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { navigationData } from '../../types/navigation-data';
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -18,15 +18,26 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className='fixed left-0 top-0 z-[999] w-max px-2 bg-[#efefef] py-2 rounded-xl'>
+      {/* Hamburger toggle — visible only on small screens */}
+      <div className='fixed left-0 top-0 z-[999] w-max px-2 bg-[#efefef] py-2 rounded-xl md:hidden'>
         <button onClick={toggleSidebar} className='p-2 text-lg text-black'>
-          <FaBars />
+          {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
+
+      {/* Backdrop overlay — mobile only */}
+      {isOpen && (
+        <div
+          className='fixed inset-0 bg-black/40 z-[90] md:hidden'
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Sidebar panel */}
       <div
-        className={`min-w-[200px] z-50 h-screen bg-[#efefef] pb-4 pt-[60px] overflow-y-scroll no-scrollbar fixed transition-all duration-75 ${
+        className={`fixed top-0 left-0 min-w-[210px] w-[210px] z-[95] h-screen bg-[#efefef] pb-4 pt-[60px] md:pt-4 overflow-y-scroll no-scrollbar transition-transform duration-200 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:!translate-x-0 md:static w-[210px] z-[99]`}
+        } md:translate-x-0`}
       >
         <nav className='w-full flex flex-col gap-4'>
           {navigationData.map((nav) => (
@@ -48,6 +59,8 @@ export default function Sidebar() {
                       if (subNav.shouldOpenModal) {
                         setModalOpen(true);
                       }
+                      // Close sidebar on mobile after clicking a nav item
+                      setIsOpen(false);
                     }}
                   >
                     <div className='h-[20px] w-[3px] rounded-[2px] transition invisible group-hover:bg-blue-500 group-hover:visible'></div>

@@ -27,7 +27,7 @@ export default function LeadsAccordion() {
   const [isModalOpen, setModalOpen] = useState(false);
   return (
     <div className='w-full p-2 md:p-0'>
-      <div className='p-[0.125rem] mt-14 md:mt-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl'>
+      <div className='p-[0.125rem] mt-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl'>
         <div className='w-full bg-[#fefefe] shadow-2xl p-4 pb-6 rounded-xl'>
           <div className='flex items-center justify-between cursor-pointer'>
             <div className='flex items-center gap-2'>
@@ -55,18 +55,17 @@ export default function LeadsAccordion() {
 
           {isOpen && (
             <div
-              className={`w-full p-2 flex flex-col md:flex-row transition-[max-height] duration-300 divide-x divide-slate-300 ${
-                !isOpen && 'max-h-0'
-              }`}
+              className={`w-full p-2 flex flex-col lg:flex-row transition-[max-height] duration-300 lg:divide-x lg:divide-slate-300 ${!isOpen && 'max-h-0'
+                }`}
             >
-              <div className='w-full lg:w-[60%]'>
+              <div className='w-full md:w-full lg:w-3/5'>
                 <p className=' text-sm '>
                   Copilot has pinpointed 20 key leads that show strong purchase
                   intent and are actively engaging. These leads needs your
                   focus.
                 </p>
 
-                <ul className='flex flex-col md:flex-row gap-3 p-3'>
+                <ul className='flex flex-col sm:flex-row gap-3 p-2 sm:p-3'>
                   <li
                     onClick={() => setModalOpen(true)}
                     className='flex flex-col gap-3 border p-2 rounded-xl hover:bg-[#e1e3ec] '
@@ -158,7 +157,7 @@ export default function LeadsAccordion() {
                 </ul>
               </div>
 
-              <div className='hidden w-[40%] p-5 lg:flex flex-col items-start justify-center gap-3'>
+              <div className='hidden md:flex md:w-full lg:w-2/5 p-3 lg:p-5 flex-col items-start justify-center gap-3'>
                 <p className='w-full text-balance text-sm text-gray-500'>
                   Other key activities
                 </p>

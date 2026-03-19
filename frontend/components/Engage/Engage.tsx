@@ -51,7 +51,7 @@ export default function Engage() {
         </div>
       </div>
 
-      <div className='w-full flex items-center justify-between p-2 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-xl shadow-md'>
+      <div className='w-full flex items-center justify-between gap-2 flex-wrap p-2 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-xl shadow-md'>
         <div className='flex items-center gap-2 text-slate-100'>
           <BsStars className='text-sm' />
           <p className='text-xs leading-5'>
@@ -60,7 +60,7 @@ export default function Engage() {
           </p>
         </div>
 
-        <div className='flex items-center gap-1 text-xs'>
+        <div className='flex items-center gap-1 text-xs flex-wrap'>
           <button className='flex items-center gap-2 px-2 py-1 text-slate-100'>
             <FaEdit />
             <p> Edit</p>

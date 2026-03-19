@@ -71,8 +71,8 @@ export default function ChartsPage() {
 
   return (
     <div className='flex'>
-      <div className='flex-1 p-6'>
-        <h1 className='text-2xl font-bold mb-6'>Charts Dashboard</h1>
+      <div className='flex-1 p-3 md:p-6'>
+        <h1 className='text-xl md:text-2xl font-bold mb-4 md:mb-6'>Charts Dashboard</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           <div className='bg-white p-4 shadow rounded-xl'>
             <h2 className='text-lg font-semibold mb-2 '>Pie Chart</h2>

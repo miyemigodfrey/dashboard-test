@@ -2,8 +2,8 @@ import { dummyData } from '@/utils/data/dummy'; // Import the dummy data
 
 export default function Grid() {
   return (
-    <div className='overflow-x-auto table-auto border-collapse w-full text-sm '>
-      <div className='grid grid-cols-[auto_auto_auto_auto_auto] items-center justify-evenly'>
+    <div className='overflow-x-auto w-full text-sm'>
+      <div className='grid grid-cols-[auto_auto_auto_auto_auto] items-center justify-evenly min-w-[500px]'>
         <div className=' p-2'></div>
         <div className='text-left'>
           <select>
@@ -34,7 +34,7 @@ export default function Grid() {
         </div>
       </div>
 
-      <div className='grid grid-cols-[auto_auto_auto_auto] items-center gap-3'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center gap-3'>
         {dummyData.map((row) => (
           <div key={row.id}>
             <div

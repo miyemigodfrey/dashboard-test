@@ -2,7 +2,8 @@ import { dummyData } from '@/utils/data/dummy';
 
 export default function TableGrid() {
   return (
-    <table className='overflow-x-auto table-auto border-collapse w-full text-sm table'>
+    <div className='overflow-x-auto'>
+    <table className='table-auto border-collapse w-full text-sm min-w-[600px]'>
       <thead>
         <tr className='border-b'>
           <th className='border-b border-gray-300 p-2'></th>
@@ -64,5 +65,6 @@ export default function TableGrid() {
         </tbody>
       ))}
     </table>
+    </div>
   );
 }

@@ -106,12 +106,12 @@ export default function AgentSkills() {
             vendors
           </p>
 
-          <div className='w-full flex items-center gap-2'>
+          <div className='w-full flex flex-col sm:flex-row items-center gap-2'>
             <input
               type='text'
-              className='w-[60%] border p-2 rounded-md outline-none'
+              className='w-full sm:w-[60%] border p-2 rounded-md outline-none'
             />
-            <button className='w-[40%] p-2 text-xs md:text-sm bg-blue-600 text-slate-50 rounded-md hover:bg-slate-50 hover:border-2 hover:border-blue-500 hover:text-blue-500'>
+            <button className='w-full sm:w-[40%] p-2 text-xs md:text-sm bg-blue-600 text-slate-50 rounded-md hover:bg-slate-50 hover:border-2 hover:border-blue-500 hover:text-blue-500'>
               Allow access
             </button>
           </div>
